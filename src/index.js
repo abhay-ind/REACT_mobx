@@ -1,13 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Home from './home';
+import Time from './time';
+import Data from './data';
+import Currency from './currency';
 import reportWebVitals from './reportWebVitals';
-
+import {Route,BrowserRouter as Router,Link,browserHistory, Switch} from 'react-router-dom'
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router >
+    <Switch>
+    <Route path="/home" component={Home}></Route>
+    <Route path="/time" component={Time}></Route>
+    <Route path="/data" component={Data}></Route>
+    <Route path="/currency" component={Currency}></Route>
+    </Switch>
+  </Router>
+  ,
   document.getElementById('root')
 );
 
